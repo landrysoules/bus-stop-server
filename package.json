@@ -1,0 +1,30 @@
+{
+  "name": "bus-stop-server",
+  "version": "0.0.1",
+  "description": "Server application for mobile app BusStop.",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha spec --reporter spec --require ./spec/helpers/chai.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/landrysoules/bus-stop-server.git"
+  },
+  "author": "Landry Soules",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/landrysoules/bus-stop-server/issues"
+  },
+  "homepage": "https://github.com/landrysoules/bus-stop-server#readme",
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "chai-as-promised": "^5.1.0",
+    "fs": "0.0.2",
+    "mocha": "^2.3.2",
+    "sinon": "^1.16.1"
+  },
+  "dependencies": {
+    "cheerio": "^0.19.0",
+    "request": "^2.62.0"
+  }
+}
