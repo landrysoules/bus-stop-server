@@ -3,30 +3,27 @@ describe("Parsing functionnality", function(){
     var sinon = require('sinon');
     var chai = require('chai');
     var chaiAsPromised = require('chai-as-promised');
-    //chai.use(chaiAsPromised);
+    chai.use(chaiAsPromised);
     var request = require ('request');
     var fs = require('fs');
-    var expect = chai.expect;
-        var dataBuilder = require('../lib/DataBuilder');
+    var expect = chai.expect
     beforeEach(function(){
         requestStub = sinon.stub(request, 'get');
     });
-    afterEach(function(){
-        requestStub.restore();
-    });
-    it("get bus lines from page", function(){
-        var fakeHTMLContent = fs.readFileSync('./spec/input/lines_input.html', 'utf-8');
-        requestStub.yields(null, null, fakeHTMLContent);
-        var lines = dataBuilder.fetchLines();
-        expect(lines).to.contain.all.keys(['B206', 'B220', '178807']);
-    });
-
-    it("get stations for given lines", function(){
-        var stations = dataBuilder.fetchStations(['B206', 'B220']);
-        expect(stations).to.contain.all.keys(['206_216_217', '206_224_225', '220_44_64', '220_43_66']);
-    });
-
-    it("keep running if a line is in error", function(){
-        fail('Not implemented yet.');
+    it("get bus lines from page", function(done){
+        var dataBuilder = require('../lib/DataBuilder');
+        fs.readFile('./spec/input/lines_input.html', 'utf-8', function(error, data){
+            if(error){
+                console.log(error);
+                throw error;
+            }
+            requestStub.yields(null, null, data);
+            var lines = dataBuilder.fetchLines();
+            console.log(lines);
+            //expect(lines).to.have.all.keys(['B206', 'B220', '178807']);
+            done();
+            expect(lines).to.eventually.have.ownProperty('B206');
+            //done();
+        });
     });
 });
