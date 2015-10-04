@@ -1,0 +1,1458 @@
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang='fr' xml:lang='fr' dir='ltr' xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+  <base href="http://www.ratp.fr/fr/"></base>
+  
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Cache-Control" content="no-cache" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="-1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  
+  
+  
+  
+  
+  
+
+  
+  <link href="css/packedCss_556464708.css" rel="stylesheet"  type="text/css" media="all" />
+  <link href="css/packedCss_-1156107245.css" rel="stylesheet"  type="text/css" media="print" />
+  <link href="css/packedCss_862376268.css" rel="stylesheet"  type="text/css" media="all" />
+
+  
+  
+
+
+  
+  
+  <style type="text/css" media="all">
+    <!--  
+	  
+	  .js .wdglang-fr { display: block; }
+    -->
+  </style>
+  <link rel="shortcut icon" href='/favicon.ico' />
+  
+  
+  <script type="text/javascript">
+sas_tmstp=Math.round(Math.random()*10000000000);sas_masterflag=1;
+function SmartAdServer(sas_pageid,sas_formatid,sas_target) {
+ if (sas_masterflag==1) {sas_masterflag=0;sas_master='M';} else {sas_master='S';};
+ document.write('<scr'+'ipt src="http://www3.smartadserver.com/call/pubj/' + sas_pageid + '/' + sas_formatid + '/' + sas_master + '/' + sas_tmstp + '/' + escape(sas_target) + '?"></scr'+'ipt>');
+}
+</script>
+  
+  
+  <link href="plugins/RATPHomePlugin/css/ratp_fixed.css" rel="stylesheet" type="text/css" media="all">
+  
+  
+  <!--[if lte IE 8]>
+    <script src="plugins/RATPHomePlugin/js/lib/html5shiv.js"></script>
+    <link href="plugins/RATPHomePlugin/css/ratp-ie8.css" rel="stylesheet" type="text/css" media="all">
+  <![endif]-->
+
+  
+<script type="text/javascript">
+	if( navigator.userAgent == "Mozilla/5.0 (X11; U; Linux i686; fr; rv:1.8.1.20) Gecko/20081217 Firefox/2.0.0.20" ){		
+		var linkTag =document.createElement("link");
+		  linkTag.setAttribute("rel", "stylesheet");
+		  linkTag.setAttribute("type", "text/css");
+		  linkTag.setAttribute("href", "plugins/RATPHomePlugin/css/ocarina.css");
+		  document.getElementsByTagName("head")[0].appendChild(linkTag)		
+	}
+</script>
+
+     
+  
+<!-- Feuille spécifique IE pour corriger les bugs d'affichages -->
+<!--[if IE]>
+   <link rel="stylesheet" type="text/css" href="css/ratp/content_ie.css" media="screen" />
+<![endif]-->
+<!-- Feuille spécifique IE6 pour corriger les bugs d'affichages -->
+<!--[if IE 6]>
+   <link rel="stylesheet" type="text/css" href="css/ratp/content_ie6.css" media="screen" />
+<![endif]-->
+<script type="text/javascript">
+  <!--
+  document.write('<link rel="stylesheet" type="text/css" href="css/ratp/js_enable.css" />');
+  -->
+</script>
+  
+  
+  
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="title" content="RATP, transports à Paris et en Ile-de-France : bus, métro, tramway, RER" />
+<meta name="keywords" content="transport paris, plan métro et RER, informations trafic, itinéraires Ile de France, carte orange, Bus, métro, RER, Tram, RATP, ticket transports, plans des lignes, horaires, réseaux métro, tourisme France" />
+<meta name="language" content="fr" />
+    
+    <title>RATP, transports à Paris et en Ile-de-France : bus, métro, tramway, RER</title>
+    <link rel="stylesheet" type="text/css" media="print,screen" href="/horaires/css/ratp_main.css" />
+<link rel="stylesheet" type="text/css" media="print" href="/horaires/css/ratp_print.css" />
+    <script type="text/javascript" src="/horaires/js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="/horaires/js/xiti.js"></script>
+    <!--[if IE]>
+      <link rel="stylesheet" href="/horaires/css/ratp_horaires_ie.css" media="print,screen" type="text/css" title="no title" charset="utf-8">
+    <![endif]-->
+    <!--[if IE 6]>
+      <link rel="stylesheet" href="/horaires/css/ratp_horaires_ie6.css" media="print,screen" type="text/css" title="no title" charset="utf-8">
+    <![endif]-->
+    <!--[if IE 7]>
+      <link rel="stylesheet" href="/horaires/css/ratp_horaires_ie7.css" media="print,screen" type="text/css" title="no title" charset="utf-8">
+    <![endif]-->
+</head>
+
+<body  id="AjaxCtxt-0" class=" browser-null"><script language="javascript" type="text/javascript">document.body.className = document.body.className + ' js'</script>
+<a name="top"></a>
+
+<ul class='ctxMenu click' id='ctxLangForm' style='display: none; width: 110px;'><li class='icon'><a lang='fr' xml:lang='fr' href='#' onclick="return JCMS.form.Widget.toggleLangForm('fr',this);"><img class="iso639flag fr-flag" src="s.gif" alt="fr" title="Français" /> Français</a></li><li class='icon'><a lang='en' xml:lang='en' href='#' onclick="return JCMS.form.Widget.toggleLangForm('en',this);"><img class="iso639flag en-flag" src="s.gif" alt="en" title="English" /> English</a></li><li class='icon'><a lang='it' xml:lang='it' href='#' onclick="return JCMS.form.Widget.toggleLangForm('it',this);"><img class="iso639flag it-flag" src="s.gif" alt="it" title="Italiano" /> Italiano</a></li><li class='icon'><a lang='es' xml:lang='es' href='#' onclick="return JCMS.form.Widget.toggleLangForm('es',this);"><img class="iso639flag es-flag" src="s.gif" alt="es" title="Español" /> Español</a></li><li class='icon'><a lang='de' xml:lang='de' href='#' onclick="return JCMS.form.Widget.toggleLangForm('de',this);"><img class="iso639flag de-flag" src="s.gif" alt="de" title="Deutsch" /> Deutsch</a></li><li class='icon'><a lang='ja' xml:lang='ja' href='#' onclick="return JCMS.form.Widget.toggleLangForm('ja',this);"><img class="iso639flag ja-flag" src="s.gif" alt="ja" title="日本語" /> 日本語</a></li><li class='icon'><a lang='nl' xml:lang='nl' href='#' onclick="return JCMS.form.Widget.toggleLangForm('nl',this);"><img class="iso639flag nl-flag" src="s.gif" alt="nl" title="Nederlands" /> Nederlands</a></li></ul>
+<ul class='ctxTooltip cached click idle' id='ctxTooltipMenu' style='display: none;' onclick="return CtxMenuManager.handleTooltip();"><li>&nbsp;</li></ul>
+<div style=" "  class="Outter PortletPortal ID_f_21831 ajax-refresh-div Inner">
+
+
+  <div style="margin: auto auto auto auto ; vertical-align: middle; text-align: left;" id='espace_n3' class="Outter PortletColumn ID_f_21830 ajax-refresh-div Portlet PortletCollection Inner screen">
+<div >
+<div class=" col-item" style="text-align: left; vertical-align: top;">
+
+
+
+
+
+
+    
+	    
+    
+
+        
+        
+        
+        
+        <div id="pubBandeau">
+        <div id="pubBandeauContent" class="imgOuScript">
+            
+            
+          	  
+              	<script type="text/javascript">
+sas_pageid='39495/(horaires_et_trafic/hp)'; // Page : RATP.fr/horaires_et_trafic/hp (PageID=268672)
+sas_formatid=5789;  // Format : Megaban 728x90
+sas_target='';   // Ciblage
+SmartAdServer(sas_pageid,sas_formatid,sas_target);
+</script>
+<noscript>
+<a href="http://www3.smartadserver.com/call/pubjumpi/39495/(horaires_et_trafic/hp)/5789/S/[timestamp]/?" target="_blank">
+<img src="http://www3.smartadserver.com/call/pubi/39495/(horaires_et_trafic/hp)/5789/S/[timestamp]/?" border="0" alt="" /></a>
+</noscript>
+                          
+            
+         
+            <!-- Bandeau publicitaire -->
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        
+        <div class="bottomBorder"></div>
+
+        
+        
+    
+
+
+
+
+  
+  
+
+
+</div><div class=" col-item" style="text-align: left; vertical-align: top;"><div style="margin: auto auto auto auto ; vertical-align: middle; text-align: left;"  class="Outter PortletJspCollection ID_w_104729 ajax-refresh-div Portlet PortletCollection Inner">
+<header role="banner" class="container">
+	
+	<div id="CNIL">
+		<div class="cnilWarningMsg"><div style="margin: auto auto auto auto ; vertical-align: middle; text-align: left;"  class="Outter PortletWYSIWYG ID_r_116037 ajax-refresh-div Portlet PortletSkinable Inner">
+
+
+
+
+	<div class="wysiwyg wysiwyg">
+ <p>En poursuivant votre navigation, vous acceptez l’utilisation de cookies pour vous proposer des services et des offres adapt&eacute;s &agrave; vos centres d’int&eacute;r&ecirc;t et mesurer la fr&eacute;quentation de nos services. <a href="ratp/r_23895/mentions-legales/">Pour en savoir plus et param&eacute;trer les cookies</a></p>
+</div>
+</div></div>
+		<button type="button" class="acceptButton" onclick="JCMS.plugin.HomeUtils.creerCookie('cc_disable',true, 395);">j'accepte</button>
+		<div class="clear"></div>    
+	</div>
+
+	
+	<div class="borneHeader">
+		<h1 class="logo"><a href="."><img src="plugins/RATPHomePlugin/images/logo-home.png" alt="RATP - Aimer la ville"></a></h1>	
+		<div id="surHeader">            
+			<div style="margin: auto auto auto auto ; vertical-align: middle; text-align: left;"  class="Outter PortletJspCollection ID_w_104181 ajax-refresh-div Portlet PortletCollection Inner">
+
+
+
+
+<div style="margin: auto auto auto auto ; vertical-align: middle; text-align: left;"  class="Outter PortletJsp ID_w_104221 ajax-refresh-div Portlet PortletSkinable Inner">
+
+
+
+
+<!-- Evitement -->
+<ul class="evitement">
+	<li><a href="#contenu">Aller au contenu</a></li>
+	<li><a href="#menu">Aller au menu</a></li>
+	<li><a href="#recherche">Aller à la recherche</a></li>
+</ul>
+<div class="mobile menuSearch"><a href="#recherche"><img src="plugins/RATPHomePlugin/images/mobile/menu-recherche.png" alt="Recherche"></a></div>
+<div class="mobile menuLang"><a href="#langues"><img src="plugins/RATPHomePlugin/images/mobile/menu-langue.png" alt="Langages"></a></div>
+<div class="mobile menuMobile"><a href="#menu"><img src="plugins/RATPHomePlugin/images/mobile/menu-mobile.png" alt="Menu"></a></div>
+<h2 class="mobile titreLangues" id="titreLangues">Languages</h2>
+<ul class="langues" id="langues">
+	<li>
+		
+		
+			
+				<span><span class="mobile">Français <img src="plugins/RATPHomePlugin/images/flag-fr.png" alt="fr"></span><abbr title="Français">FR</abbr></span>
+			
+			
+				
+	</li>
+	
+	<li>
+		
+		
+	        
+	        
+				<a href="../en/ratp/c_20541/timetable/">
+					<span class="mobile">English <img src="plugins/RATPHomePlugin/images/flag-en.png" alt="en"></span><abbr title="English" lang="en">EN</abbr>
+				</a>
+			
+	    	
+	</li>
+</ul>
+
+
+</div>
+<div class="blocRight" id="blocRight">
+    
+
+
+
+
+
+<ul class="touristInfo">
+	<li><h2>Tourist information</h2></li>
+	
+
+
+	<li><a href="../en/ratp/c_21879/visiting-paris/" target='_self'><span class="mobile">English</span><img src="upload/docs/image/png/2014-01/flag_en.png" align="English" lang="en" /></a></li>
+	<li><a href="../de/ratp/c_21879/touristen/" target='_self'><span class="mobile">Deutsch</span><img src="upload/docs/image/png/2014-01/flag_de.png" align="Deutsch" lang="de" /></a></li>
+	<li><a href="../it/ratp/c_21879/turisti/" target='_self'><span class="mobile">Italiano</span><img src="upload/docs/image/png/2014-01/flag_it.png" align="Italiano" lang="it" /></a></li>
+	<li><a href="../es/ratp/c_21879/turistas/" target='_self'><span class="mobile">Español</span><img src="upload/docs/image/png/2014-01/flag_es.png" align="Español" lang="es" /></a></li>
+	<li><a href="../nl/ratp/c_21879/toeristen/" target='_self'><span class="mobile">Nederlands</span><img src="upload/docs/image/png/2014-01/flag_nl.png" align="Nederlands" lang="nl" /></a></li>
+	<li><a href="../ja/ratp/c_21879/visiting-paris/" target='_self'><span class="mobile">Japanese</span><img src="upload/docs/image/png/2014-01/flag_ja.png" align="Japanese" lang="ja" /></a></li>
+</ul>
+
+<ul class="liensSurHeader">
+	<!-- Lien Inscription -->
+	<li>
+		
+			<a href="../fr/ratp/r_73907/mes-alertes/">Inscription</a>
+		
+		
+	</li>
+	<!-- Lien Connexion -->
+	<li class="maRatp">
+		
+			<a href="../fr/ratp/r_75021/mon-espace/"><img src="s.gif" title="Connexion" alt="Connexion"></a>
+		
+		
+	</li>
+</ul>
+
+</div>
+<div id="recherche">
+	<div style="margin: auto auto auto auto ; vertical-align: middle; text-align: left;"  class="Outter PortletJsp ID_w_104223 ajax-refresh-div Portlet PortletSkinable Inner">
+
+
+
+
+
+<div class="searchboxheader">
+    <script>
+      (function() {
+        var cx = '016735071554422641828:fllpbigs3lw';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = true;
+        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+            '//cse.google.com/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+      })();
+    </script>
+  <gcse:searchbox-only resultsUrl="http://www.ratp.fr/fr/ratp/v_15415/recherche/?index_recherche="></gcse:searchbox-only>
+</div>
+
+
+<!-- GESTION DE LA RECHERCHE EN MODE RESPONSIVE -->
+
+
+
+</div>
+</div></div>
+		</div><!-- /surHeader -->
+		<div id="blocImage" class="blocImage">
+			<div style="margin: auto auto auto auto ; vertical-align: middle; text-align: left;"  class="Outter PortletJspCollection ID_c_5361 ajax-refresh-div Portlet PortletCollection Inner">
+
+
+
+
+
+<div id="bandeau_menu" >
+
+  <div id="bandeau_menu_category">
+    
+    <h1>Horaires</h1>
+  
+    
+    
+  </div>
+  
+  
+   
+      <img src='upload/docs/image/jpeg/2014-04/bandeau_horaires.jpg' alt="" /> 
+     
+  
+</div></div>
+		</div><!-- /blocimage -->
+		<nav role="navigation" id="menu">
+			<div class="borneMenu">
+				<div style="margin: auto auto auto auto ; vertical-align: middle; text-align: left;"  class="Outter PortletNavigate ID_w_104234 ajax-refresh-div Portlet PortletSkinable Inner">
+
+
+
+<ul>
+	
+	<li>
+		<h2><a href="javascript:" target="_self"><span>Se déplacer</span></a></h2>
+		 
+		<a name="SeDeplacer" id="SeDeplacer"></a>
+		<div class="deco">
+			<ul class="sousMenu"><li class="colSsMenu">
+							<h3><a href="ratp/r_107915/votre-trajet/" target='_self'>Votre Trajet</a></h3>
+							<ul class="SsMenuListe"><li><a href="ratp/c_20528/itineraires/" target='_self'>Itinéraires</a></li>
+								<li><a href="ratp/c_20541/horaires/" target='_self'>Horaires</a></li>
+								<li><a href="ratp/c_20558/plans/" target='_self'>Plans</a></li>
+								<li><a href="ratp/r_95834/etat-du-reseau/" target='_self'>Etat du Réseau</a></li>
+								<li><a href="ratp/c_20585/titres-tarifs/" target='_self'>Titres & tarifs</a></li>
+								<li><a href="ratp/c_20604/vente-et-sav/" target='_self'>Vente et SAV</a></li>
+								
+							</ul>
+						</li>
+					<li class="colSsMenu">
+							<h3><a href="ratp/r_107916/vos-infos-pratiques/" target='_self'>Vos Infos Pratiques</a></h3>
+							<ul class="SsMenuListe"><li><a href="ratp/c_20618/accessibilite/" target='_self'>Accessibilité</a></li>
+								<li><a href="ratp/c_20629/applications-/-twitter/" target='_self'>Applications / Twitter</a></li>
+								<li><a href="ratp/c_20564/voyager-la-nuit/" target='_self'>Voyager la nuit</a></li>
+								<li><a href="ratp/c_21879/en-visite-a-paris/" target='_self'>En visite à Paris</a></li>
+								<li><a href="ratp/c_20660/objets-trouves/" target='_self'>Objets trouvés</a></li>
+								<li><a href="ratp/r_102432/cyclistes-et-pietons/" target='_self'>Cyclistes et piétons</a></li>
+								<li><a href="ratp/v_131498/toilettes-publiques/" target='_self'>Toilettes publiques</a></li>
+								
+							</ul>
+						</li>
+					<li class="colSsMenu">
+							<h3><a href="ratp/r_107917/vie-du-reseau/" target='_self'>Vie du Réseau</a></h3>
+							<ul class="SsMenuListe"><li><a href="ratp/r_82594/ratp-scope-les-coulisses-du-reseau/" target='_blank'>RATP Scope, les coulisses du réseau</a></li>
+								<li><a href="ratp/c_5052/plus-de-confort/" target='_self'>Plus de confort</a></li>
+								<li><a href="ratp/c_5049/plus-d-innovations/" target='_self'>Plus d'innovations</a></li>
+								<li><a href="ratp/c_20655/questions/" target='_self'>Questions</a></li>
+								<li><a href="ratp/c_5028/mediateur/" target='_self'>Médiateur</a></li>
+								<li><a href="ratp/r_52481/nuit-blanche/" target='_self'>Nuit Blanche</a></li>
+								
+							</ul>
+						</li>
+					
+				
+					
+					
+						
+						<li class="colPub">
+							<a href="ratp/r_52482/la-ratp-fait-sa-nuit-blanche-/">
+								<h3>Nuit Blanche 2015</h3>
+								<p class="categArticle">La RATP fait sa nuit blanche ! - <span class="fauxLien">Lire l'article</span></p>
+								<p class="illustration"><img src="upload/docs/image/jpeg/2015-09/th-286x107-nuit_blanche_2015.jpg.jpg" alt="" /></p>
+							</a>
+						</li>
+						
+					
+			</ul>
+		</div>
+		
+	</li>
+	
+	<li>
+		<h2><a href="javascript:" target="_self"><span>Le Groupe</span></a></h2>
+		 
+		<a name="LeGroupe" id="LeGroupe"></a>
+		<div class="deco">
+			<ul class="sousMenu"><li class="colSsMenu">
+							<h3><a href="ratp/c_5002/le-groupe-ratp/" target='_self'>Le Groupe RATP</a></h3>
+							<ul class="SsMenuListe"><li><a href="ratp/c_5013/activites/" target='_self'>Activités</a></li>
+								<li><a href="ratp/c_5009/strategie/" target='_self'>Stratégie</a></li>
+								<li><a href="ratp/c_5018/les-femmes-les-hommes/" target='_self'>Les femmes & les hommes</a></li>
+								<li><a href="ratp/c_5023/chiffres-cles/" target='_self'>Chiffres clés</a></li>
+								<li><a href="ratp/r_115735/rapport-annuel/" target='_self'>Rapport annuel</a></li>
+								<li><a href="ratp/r_128174/bulletin-officiel/" target='_self'>Bulletin officiel</a></li>
+								
+							</ul>
+						</li>
+					<li class="colSsMenu">
+							<h3><a href="ratp/c_5037/en-ile-de-france/" target='_self'>En ile-de-France</a></h3>
+							<ul class="SsMenuListe"><li><a href="ratp/r_70070/contrat-ratp-stif-2012-2015/" target='_self'>Contrat RATP-STIF 2012-2015</a></li>
+								<li><a href="ratp/c_5042/le-reseau/" target='_self'>Le réseau</a></li>
+								<li><a href="ratp/c_5053/extension-du-reseau/" target='_self'>Extension du réseau</a></li>
+								<li><a href="ratp/c_5061/modernisation-et-amenagement/" target='_self'>Modernisation et aménagement</a></li>
+								<li><a href="ratp/r_97306/concertations/" target='_self'>Concertations</a></li>
+								<li><a href="ratp/r_95056/agences-territoriales/" target='_blank'>Agences territoriales</a></li>
+								<li><a href="ratp/r_50305/restons-civils/" target='_self'>Restons Civils</a></li>
+								<li><a href="ratp/r_118788/travaux-d-ete-sur-le-rer-a/" target='_self'>Travaux d'été sur le RER A</a></li>
+								
+							</ul>
+						</li>
+					<li class="colSsMenu">
+							<h3><a href="ratp/c_5064/en-france-a-l-international/" target='_self'>En France & à l'international</a></h3>
+							<ul class="SsMenuListe"><li><a href="ratp/c_5069/activites/" target='_self'>Activités</a></li>
+								<li><a href="ratp/c_5074/realisations/" target='_self'>Réalisations</a></li>
+								<li><a href="ratp/v_133333/les-filiales/" target='_self'>Les filiales</a></li>
+								
+							</ul>
+						</li>
+					<li class="colSsMenu">
+							<h3><a href="ratp/c_5079/rse-innovation/" target='_self'>RSE & Innovation</a></h3>
+							<ul class="SsMenuListe"><li><a href="ratp/c_5094/innovation/" target='_self'>Innovation</a></li>
+								<li><a href="ratp/r_107918/social/" target='_self'>Social</a></li>
+								<li><a href="ratp/c_5085/environnement/" target='_self'>Environnement</a></li>
+								<li><a href="ratp/c_5090/societal/" target='_self'>Sociétal</a></li>
+								<li><a href="ratp/r_70350/open-data/" target='_self'>Open Data</a></li>
+								
+							</ul>
+						</li>
+					<li class="colSsMenu">
+							<h3><a href="ratp/c_5100/aimer-la-ville/" target='_self'>Aimer la ville</a></h3>
+							<ul class="SsMenuListe"><li><a href="ratp/c_5102/culture/" target='_self'>Culture</a></li>
+								<li><a href="ratp/c_5107/sport/" target='_self'>Sport</a></li>
+								<li><a href="ratp/v_133612/patrimoine-d-aujourd-hui-et-demain/" target='_self'>Patrimoine d'aujourd'hui et demain</a></li>
+								<li><a href="ratp/r_112621/la-ratp-invite/" target='_self'>La RATP invite</a></li>
+								<li><a href="ratp/r_117798/les-grands-chefs-dans-le-metro/" target='_self'>Les grands chefs dans le métro</a></li>
+								
+							</ul>
+						</li>
+					
+				
+					
+					
+			</ul>
+		</div>
+		
+	</li>
+	
+	<li>
+		<h2><a href="ratp/c_5097/actualites/" target="_self"><span>Actualités</span></a></h2>
+		
+	</li>
+	
+	<li>
+		<h2><a href="javascript:" target="_self"><span>Carrières</span></a></h2>
+		 
+		<a name="Carrieres" id="Carrieres"></a>
+		<div class="deco">
+			<ul class="sousMenu"><li class="colSsMenu">
+							<h3><a href="ratp/c_20787/nous-connaitre/" target='_self'>﻿Nous connaître</a></h3>
+							<ul class="SsMenuListe"><li><a href="ratp/c_20788/engagements/" target='_self'>Engagements</a></li>
+								<li><a href="ratp/c_20789/diversite/" target='_self'>Diversité</a></li>
+								<li><a href="ratp/c_20790/chiffres-cles-rh/" target='_self'>Chiffres clés RH</a></li>
+								<li><a href="ratp/c_20791/projets/" target='_self'>Projets</a></li>
+								
+							</ul>
+						</li>
+					<li class="colSsMenu">
+							<h3><a href="ratp/c_20792/nos-metiers/" target='_self'>Nos métiers</a></h3>
+							<ul class="SsMenuListe"><li><a href="ratp/c_20793/exploitation-transport/" target='_self'>Exploitation transport</a></li>
+								<li><a href="ratp/c_20794/maintenance/" target='_self'>Maintenance</a></li>
+								<li><a href="ratp/c_20795/relation-de-service/" target='_self'>Relation de service</a></li>
+								<li><a href="ratp/c_20796/ing-des-systemes-transport/" target='_self'>Ing des systèmes transport</a></li>
+								<li><a href="ratp/c_20797/ing-informatique-et-telecoms/" target='_self'>Ing informatique et télécoms</a></li>
+								<li><a href="ratp/c_20799/ing-genie-civil/" target='_self'>Ing génie civil</a></li>
+								<li><a href="ratp/c_20798/fonctions-supports/" target='_self'>Fonctions supports</a></li>
+								
+							</ul>
+						</li>
+					<li class="colSsMenu">
+							<h3><a href="ratp/c_20800/nos-carrieres/" target='_self'>Nos carrières</a></h3>
+							<ul class="SsMenuListe"><li><a href="ratp/c_20801/integration/" target='_self'>Intégration</a></li>
+								<li><a href="ratp/c_20802/formation/" target='_self'>Formation</a></li>
+								<li><a href="ratp/c_20803/parcours-professionnel/" target='_self'>Parcours professionnel</a></li>
+								
+							</ul>
+						</li>
+					<li class="colSsMenu">
+							<h3><a href="ratp/c_20804/campus-jeunes/" target='_self'>Campus Jeunes</a></h3>
+							<ul class="SsMenuListe"><li><a href="ratp/c_20805/stages/" target='_self'>Stages</a></li>
+								<li><a href="ratp/c_20806/alternance/" target='_self'>Alternance</a></li>
+								<li><a href="ratp/c_20807/jeunes-diplomes/" target='_self'>Jeunes diplômés</a></li>
+								
+							</ul>
+						</li>
+					<li class="colSsMenu">
+							<h3><a href="ratp/c_20808/nous-rejoindre/" target='_self'>Nous rejoindre</a></h3>
+							<ul class="SsMenuListe"><li><a href="ratp/c_20809/nos-offres/" target='_self'>Nos offres</a></li>
+								<li><a href="ratp/r_34575/candidature-spontanee/" target='_self'>Candidature spontanée</a></li>
+								<li><a href="ratp/c_20811/processus-de-recrutement/" target='_self'>Processus de recrutement</a></li>
+								<li><a href="ratp/c_20812/agenda/" target='_self'>Agenda</a></li>
+								<li><a href="ratp/r_79678/on-vous-voit-bien/" target='_self'>On vous voit bien</a></li>
+								
+							</ul>
+						</li>
+					
+				
+					
+					
+			</ul>
+		</div>
+		
+	</li>
+	
+	<li>
+		<h2><a href="javascript:" target="_self"><span>maRATP</span></a></h2>
+		 
+		<a name="MaRATP" id="MaRATP"></a>
+		<div class="deco">
+			<ul class="sousMenu"><li class="colSsMenu">
+							<h3><a href="ratp/r_75021/mon-espace/" target='_self'>Mon espace</a></h3>
+							<ul class="SsMenuListe">
+							</ul>
+						</li>
+					<li class="colSsMenu">
+							<h3><a href="ratp/r_73905/mes-privileges/" target='_self'>Mes privilèges</a></h3>
+							<ul class="SsMenuListe">
+							</ul>
+						</li>
+					<li class="colSsMenu">
+							<h3><a href="ratp/r_73907/mes-alertes/" target='_self'>Mes alertes</a></h3>
+							<ul class="SsMenuListe">
+							</ul>
+						</li>
+					
+				
+					
+					
+						
+					
+			</ul>
+		</div>
+		
+	</li>
+	
+</ul>
+
+
+
+
+</div>
+			</div>
+		</nav>
+	</div>
+</header>
+
+<script type="text/javascript">
+
+function lireCookie(name){
+	
+    var oRegex = new RegExp("(?:; )?" + name + "=([^;]*);?");
+	    
+      if (oRegex.test(document.cookie)) {
+        var element = document.getElementById("CNIL");
+        element.parentNode.removeChild(element);
+      } else {
+        return null;
+      }
+}
+lireCookie('cc_disable');
+</script></div></div><div class=" col-item" style="text-align: left; vertical-align: top;"><div style="margin: auto auto auto auto ; vertical-align: middle; text-align: left;"  class="Outter PortletColumn ID_f_21829 ajax-refresh-div Portlet PortletCollection Inner content">
+<div >
+<div class=" col-item" style="text-align: left; vertical-align: top;"><div style="margin: auto auto auto auto ; vertical-align: middle; text-align: left;"  class="Outter PortletNavigate ID_c_5647 ajax-refresh-div Portlet PortletSkinable Inner">
+
+
+
+
+<div class="fil">
+	
+		
+			
+			
+			
+			
+			
+			
+				<a  href='ratp/c_5001/menu-principal/'>Accueil</a>			
+			
+			
+			
+			
+			
+			
+		
+	
+		
+			
+			<span class='locationSeparator'> &gt; </span>
+			
+			
+			
+			
+				<a  href='ratp/c_20527/se-deplacer/'>Se déplacer</a>			
+			
+			
+			
+			
+			
+			
+		
+	
+		
+			
+			<span class='locationSeparator'> &gt; </span>
+			
+			
+			
+			
+				<a  href='ratp/r_107915/votre-trajet/'>Votre Trajet</a>			
+			
+			
+			
+			
+			
+			
+		
+	
+		
+			
+			<span class='locationSeparator'> &gt; </span>
+			
+			
+			
+			
+			
+			
+			
+				<span class="selected">Horaires</span>
+			
+			
+			
+		
+	
+</div>
+
+</div></div><div class=" col-item" style="text-align: left; vertical-align: top;"><div style="margin: auto auto auto auto ; vertical-align: middle; text-align: left;" id='content' class="Outter PortletSelection ID_f_21828 ajax-refresh-div Portlet PortletCollection Inner">  <div style="margin: auto auto auto auto ; vertical-align: middle; text-align: left;"  class="Outter PortletRow ID_f_21827 ajax-refresh-div Portlet PortletCollection Inner">
+
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr >
+
+
+<td class=" row-item" valign="top" align="left" >
+  <div style="margin: auto 5px 17px auto ; width: 645px; vertical-align: middle; text-align: left;"  class="Outter PortletColumn ID_f_21825 ajax-refresh-div Portlet PortletCollection Inner block_left innerContent">
+<div >
+<div class=" col-item" style="text-align: left; vertical-align: top;"></div><div class=" col-item" style="text-align: left; vertical-align: top;"><div style="margin: auto auto auto auto ; vertical-align: middle; text-align: left;"  class="Outter PortletQueryForeach ID_v_21923 ajax-refresh-div Portlet PortletSkinable Inner">
+
+
+
+
+
+
+
+
+<div class="forEachContainer">
+	
+
+
+		<div class="itemForEach">
+		    
+
+<div id="contenu_horaire">
+  <h1>Horaires</h1>  <ul id="liens_utiles">
+  <li><a href="http://www.ratp.fr/contact/remarques">Vos remarques</a></li>
+  <li><a href="http://www.ratp.fr/fr/ratp/c_21321/faq-horaires/">FAQ</a></li>
+  
+</ul>
+         <ul id="tabs">
+          <li class="RER">
+      <a href="/horaires/fr/ratp/rer">RER</a>    </li>
+          <li class="Métro">
+      <a href="/horaires/fr/ratp/metro">Métro</a>    </li>
+          <li class="Bus current">
+      <a href="/horaires/fr/ratp/bus">Bus</a>    </li>
+          <li class="Tramway">
+      <a href="/horaires/fr/ratp/tramway">Tramway</a>    </li>
+          <li class="Noctilien">
+      <a href="/horaires/fr/ratp/noctilien">Noctilien</a>    </li>
+  </ul>    
+<form method="post"
+  action="/horaires/fr/ratp/bus/choix-arret-direction">
+  <fieldset class="bus">
+    <div class="legend">Les prochains passages à l'arrêt de votre choix</div>
+
+    <div class="line_details">
+      <span>
+  	    <img alt="Bus" class="reseau" src="/horaires/images/networks/bus.png" /><img alt="Ligne 206" class="ligne bus" src="/horaires/images/lines/bus/206.png" />Gare de Pontault-Combault / Noisy le Grand RER      </span>
+    </div>
+
+	  <h3 class="new_section">Choisissez votre arrêt et votre direction</h3>
+
+	  <div class="select_field" >
+      <label for="busArretDirectionForm_station">Arrêt :</label>	    <select name="busArretDirectionForm[station]" id="busArretDirectionForm_station">
+<option value="206_216_217">Avenue Bertrand</option>
+<option value="206_301_302">Bois la Croix</option>
+<option value="206_222">Centre Commercial 2000</option>
+<option value="206_195_312">Cimetiere de Noisy</option>
+<option value="206_235_236">College Condorcet</option>
+<option value="206_311">Eglise</option>
+<option value="206_199_200">Friedberg</option>
+<option value="206_38_256">Gare Villiers-S-Marne RER</option>
+<option value="206_5">Gare de Pontault-Combault</option>
+<option value="206_51_208">Georges Courteline</option>
+<option value="206_202_203">Georges Demesy</option>
+<option value="206_310">Georges Foureau</option>
+<option value="206_218_219">Gonzalve</option>
+<option value="206_223">Hotel de Ville de Pontault Combault</option>
+<option value="206_214_215">Jean Kiffer</option>
+<option value="206_229_230">L&#039;Orme au Charron</option>
+<option value="206_206_207">La Dame Blanche</option>
+<option value="206_224_225">Les Bleuets</option>
+<option value="206_204_205">Les Mousquetaires</option>
+<option value="206_198_201">Mairie de Villiers-S-Marne</option>
+<option value="206_212_213">Mairie du Plessis-Trevise</option>
+<option value="206_237">Marche</option>
+<option value="206_233_234">Massena</option>
+<option value="206_210_211">Maurice Berteaux-G. Leclerc</option>
+<option value="206_50">Maurice Berteaux-Tramway</option>
+<option value="206_209">Michel Bony</option>
+<option value="206_196_306">Moulin a Vent</option>
+<option value="206_40">Noisy Mont d&#039;Est RER</option>
+<option value="206_42_43">Place Beilstein</option>
+<option value="206_39_47">Place de Verdun</option>
+<option value="206_231_232">Residence des Tilleuls</option>
+<option value="206_226_227">Salle des Fetes Jacques Brel</option>
+<option value="206_197_305">Square des Allobroges</option>
+<option value="206_45_46">Stade Lucien Morane</option>
+<option value="206_303_304">Village Anglais</option>
+</select>	  </div>
+
+	  <div class="select_field" >
+	    <label for="busArretDirectionForm_direction">Direction : </label>	    <select name="busArretDirectionForm[direction]" id="busArretDirectionForm_direction">
+<option value="A">Gare de Pontault-Combault</option>
+<option value="R">Noisy le Grand RER</option>
+</select>	  </div>
+
+	  <input type="hidden" name="busArretDirectionForm[ligne]" value="B206" id="busArretDirectionForm_ligne" /><input type="hidden" name="busArretDirectionForm[previousLine]" value="" id="busArretDirectionForm_previousLine" />
+	</fieldset>
+  <div class="boutons">
+	  <span class="copyright">Copyright &copy; RATP</span>
+    <div class="button_wrapper">
+      <input id="hor_submit_search" name="rechercher" type="submit" value="Rechercher" />
+    </div>
+	  <div class="button_wrapper">
+	    <input id="hor_submit_modify" name="modifier" type="submit" value="Modifier" />
+	  </div>
+  </div>
+</form>
+<script type="text/javascript">
+  writeHoraireXitiTag("BUS_PP_ETAPE2_OK");
+</script>
+</div>
+
+		</div>
+	
+</div>
+
+
+
+
+
+  
+  
+
+</div></div><div class=" col-item" style="text-align: left; vertical-align: top;"></div>
+</div>
+</div>
+</td>
+
+<td class=" row-item" valign="top" align="left" >
+  <div style="margin: auto auto auto auto ; width: 300px; vertical-align: middle; text-align: left;" id='block_right_pub' class="Outter PortletColumn ID_f_21826 ajax-refresh-div Portlet PortletCollection Inner block_right">
+<div >
+<div class=" col-item" style="text-align: left; vertical-align: top;"><div>&nbsp;</div></div><div class=" col-item" style="text-align: left; vertical-align: top;"><div style="margin: auto auto auto auto ; vertical-align: middle; text-align: left;"  class="Outter PortletQueryForeach ID_r_74435 ajax-refresh-div Portlet PortletSkinable Inner">
+
+
+
+
+
+
+
+
+<div class="forEachContainer">
+	
+
+
+		<div class="itemForEach">
+		    
+<div id="maratp-widget-container" style="height:160px;"></div>
+		</div>
+	
+</div>
+
+
+
+
+
+  
+  
+
+</div></div><div class=" col-item" style="text-align: left; vertical-align: top;">
+
+
+
+
+
+
+    
+        
+    
+    
+      
+          
+      
+      
+      <div id="pubEncart1">
+        
+          
+          
+          	  
+          	  	
+          	  	<div id="pubEncart1Tgt"></div>
+          	  
+          
+        
+        
+          <!-- Publicité Encart 1 -->
+        
+      </div>
+      
+      
+            
+    
+  
+
+
+
+  
+  
+
+
+</div><div class=" col-item" style="text-align: left; vertical-align: top;"></div><div class=" col-item" style="text-align: left; vertical-align: top;">
+
+
+    
+	    
+    
+      
+      
+            
+      
+      
+      <div id="pubPubliCommunique">
+        
+          
+          
+          	  
+          	  	
+          	  	<div id="pubPubliCommuniqueTgt"></div>
+          	  
+          
+        
+        
+          <!-- Publi-communiqué 1 -->
+        
+      </div>
+      
+      
+            
+    
+  
+
+
+
+  
+  
+
+
+</div><div class=" col-item" style="text-align: left; vertical-align: top;"><div style="margin: 10px auto auto auto ; vertical-align: middle; text-align: left;"  class="Outter PortletJsp ID_v_21927 ajax-refresh-div Portlet PortletSkinable Inner">
+
+         <div id="favorites">
+  <h3>Favoris Horaires</h3>
+
+        
+      <h4>Simplifiez-vous la vie !</h4>
+    <p>Avec son service de <strong> personnalisation</strong>, disposez de vos horaires en un seul clic... Simple et pratique, il suffit d'ajouter à vos favoris le résultat de votre requête en cliquant sur le lien <strong> "Ajouter à mes horaires favoris." </strong></p>
+  
+  <script type="text/javascript">
+  //<![CDATA[
+  jQuery(document).ready(function($) {
+    jQuery('#favorites form').submit(function() {
+      jQuery.post(
+        "/horaires/fr/ratp/favoris/remove",
+        jQuery("#favorites form").serialize(),
+        function(data){
+          $("#favorites").replaceWith(data);
+        }
+      );
+      return false;
+    });
+  });
+  //]]>
+  </script>
+</div>       </div></div><div class=" col-item" style="text-align: left; vertical-align: top;"></div><div class=" col-item" style="text-align: left; vertical-align: top;">
+
+
+
+
+
+
+    
+  	    
+    
+      
+      
+            
+      
+      
+      <div id="pubEncart2">
+        
+          
+          
+          	  
+          	  	
+          	  	<div id="pubEncart2Tgt"></div>
+          	  
+          
+        
+        
+          <!-- Publicité Encart 2 -->
+        
+      </div>
+      
+      
+            
+    
+  
+
+
+
+  
+  
+
+
+</div><div class=" col-item" style="text-align: left; vertical-align: top;"><div style="margin: 10px auto auto auto ; vertical-align: middle; text-align: left;"  class="Outter PortletJsp ID_r_91752 ajax-refresh-div Portlet PortletSkinable Inner">
+
+<!--## ENCART : ENCART_02 ##-->
+</div></div>
+</div>
+</div>
+</td>
+
+</tr></table></div></div></div>
+</div>
+</div></div><div class=" col-item" style="text-align: left; vertical-align: top;"><div style="margin: auto auto auto auto ; vertical-align: middle; text-align: left;"  class="Outter PortletJspCollection ID_w_104176 ajax-refresh-div Portlet PortletCollection Inner">
+
+
+
+
+
+
+<footer class="container">
+	<div class="borneFooter">
+		<ul>
+			<div style="margin: auto auto auto auto ; vertical-align: middle; text-align: left;" id='portlet_espace' class="Outter PortletJspCollection ID_w_104244 ajax-refresh-div Portlet PortletCollection Inner">
+
+
+
+
+
+
+<li class="footerCol">
+	<img src="plugins/RATPHomePlugin/images/footer-logo-ratp.png" alt="RATP" class="logoRatpFooter">
+	<h2 class="titreLiensFooter"><a href="#menuFooter" class="noLink" onclick="$(this).up('li').toggleClassName('active'); return false;"><div>Accès direct :</div></a></h2>
+	<ul id="menuFooter" class="menuFooter toggleSection">
+		
+
+
+
+
+
+	<ul>
+	  
+	    
+        <li><a href="ratp/n_23731/journalistes/">Journalistes</a></li>
+      
+    
+	    
+        <li><a href="ratp/n_23734/fournisseurs/">Fournisseurs</a></li>
+      
+    
+	    
+        <li><a href="ratp/n_23733/entreprises/">Entreprises</a></li>
+      
+    
+	</ul>
+
+		
+
+
+
+
+
+	<ul>
+	  
+	    
+        <li><a href="ratp/n_23735/ratp-dev/" onclick="return xt_click(this, 'C', '23', 'RATP_Dev', 'S');" xtclib='RATP_Dev'>RATP Dev</a></li>
+      
+    
+	    
+        <li><a href="ratp/r_30428/fondation/">Fondation</a></li>
+      
+    
+	</ul>
+
+	</ul>
+</li>
+
+
+</div>
+			<div style="margin: auto auto auto auto ; vertical-align: middle; text-align: left;"  class="Outter PortletJspCollection ID_r_116034 ajax-refresh-div Portlet PortletCollection Inner">
+
+
+
+<li class="footerCol active">
+
+  <h2 class="footerGroupe"><a href="#groupeTwitter" class="noLink" onclick="$(this).up('li').toggleClassName('active'); return false;"><div>Le groupe RATP sur Twitter</div></a></h2>
+  <a name="groupeTwitter" id="groupeTwitter"></a>
+  <div class="toggleSection">
+  
+    
+
+ 
+      <script src="//platform.twitter.com/widgets.js" async></script>
+       <p><a href="https://twitter.com/GroupeRATP" data-show-screen-name="true" data-dnt="true" class="twitter-follow-button btnTwitter" data-show-count="false" data-lang="fr">GroupeRATP</a><p/>   
+       
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script> 
+        
+      <script src="//platform.twitter.com/widgets.js" async></script>
+       <p><a href="https://twitter.com/ClientsRATP" data-show-screen-name="true" data-dnt="true" class="twitter-follow-button btnTwitter" data-show-count="false" data-lang="fr">ClientsRATP</a><p/>   
+       
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script> 
+        
+      <script src="//platform.twitter.com/widgets.js" async></script>
+       <p><a href="https://twitter.com/RATPrecrute" data-show-screen-name="true" data-dnt="true" class="twitter-follow-button btnTwitter" data-show-count="false" data-lang="fr">RATPrecrute</a><p/>   
+       
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script> 
+        
+      <script src="//platform.twitter.com/widgets.js" async></script>
+       <p><a href="https://twitter.com/SergeLapinRATP" data-show-screen-name="true" data-dnt="true" class="twitter-follow-button btnTwitter" data-show-count="false" data-lang="fr">SergeLapinRATP</a><p/>   
+       
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script> 
+       
+ 
+
+ 
+  
+    <div style="margin: auto auto auto auto ; vertical-align: middle; text-align: left;"  class="Outter PortletQueryForeach ID_r_116031 ajax-refresh-div Portlet PortletSkinable Inner">
+
+
+
+
+		<ul class="menuFooterLignes">
+
+
+		
+		<li><a href="http://twitter.com/Ligne1_RATP" target='_blank'><img src="upload/docs/image/png/2014-02/footer-ligne1.png" alt="M 1"></a></li>
+		
+		
+		<li><a href="http://twitter.com/Ligne2_RATP" target='_blank'><img src="upload/docs/image/png/2014-02/footer-ligne2.png" alt="M 2"></a></li>
+		
+		
+		<li><a href="http://twitter.com/Ligne3_RATP" target='_blank'><img src="upload/docs/image/png/2014-02/footer-ligne3.png" alt="M 3"></a></li>
+		
+		
+		<li><a href="http://twitter.com/Ligne4_RATP" target='_blank'><img src="upload/docs/image/png/2014-02/footer-ligne4.png" alt="M 4"></a></li>
+		
+		
+		<li><a href="http://twitter.com/Ligne5_RATP" target='_blank'><img src="upload/docs/image/png/2014-02/footer-ligne5.png" alt="M 5"></a></li>
+		
+		
+		<li><a href="http://twitter.com/Ligne6_RATP" target='_blank'><img src="upload/docs/image/png/2014-02/footer-ligne6.png" alt="M 6"></a></li>
+		
+		
+		<li><a href="http://twitter.com/Ligne7_RATP" target='_blank'><img src="upload/docs/image/png/2014-02/footer-ligne7.png" alt="M 7"></a></li>
+		
+		
+		<li><a href="http://twitter.com/Ligne8_RATP" target='_blank'><img src="upload/docs/image/png/2014-02/footer-ligne8.png" alt="M 8"></a></li>
+		
+		
+		<li><a href="http://twitter.com/Ligne9_RATP" target='_blank'><img src="upload/docs/image/png/2014-02/footer-ligne9.png" alt="M 9"></a></li>
+		
+		
+		<li><a href="http://twitter.com/Ligne10_RATP" target='_blank'><img src="upload/docs/image/png/2014-02/footer-ligne10.png" alt="M 10"></a></li>
+		
+		
+		<li><a href="http://twitter.com/Ligne11_RATP" target='_blank'><img src="upload/docs/image/png/2014-02/footer-ligne11.png" alt="M 11"></a></li>
+		
+		
+		<li><a href="http://twitter.com/Ligne12_RATP" target='_blank'><img src="upload/docs/image/png/2014-02/footer-ligne12.png" alt="M 12"></a></li>
+		
+		
+		<li><a href="http://twitter.com/Ligne13_RATP" target='_blank'><img src="upload/docs/image/png/2014-02/footer-ligne13.png" alt="M 13"></a></li>
+		
+		
+		<li><a href="http://twitter.com/Ligne14_RATP" target='_blank'><img src="upload/docs/image/png/2014-02/footer-ligne14.png" alt="M 14"></a></li>
+		
+		</ul></div>
+    <div style="margin: auto auto auto auto ; vertical-align: middle; text-align: left;"  class="Outter PortletQueryForeach ID_r_116033 ajax-refresh-div Portlet PortletSkinable Inner">
+
+
+
+
+		<ul class="menuFooterLignes">
+
+
+		
+		<li><a href="http://twitter.com/RERA_RATP" target='_blank'><img src="upload/docs/image/png/2014-02/footer-lignea.png" alt="RER A"></a></li>
+		
+		
+		<li><a href="https://twitter.com/RERB" target='_blank'><img src="upload/docs/image/png/2014-02/footer-ligneb.png" alt="RER B"></a></li>
+		
+		</ul></div>
+    <div style="margin: auto auto auto auto ; vertical-align: middle; text-align: left;"  class="Outter PortletQueryForeach ID_r_116032 ajax-refresh-div Portlet PortletSkinable Inner">
+
+
+
+
+		<ul class="menuFooterLignes">
+
+
+		
+		<li><a href="https://twitter.com/T1_RATP" target='_blank'><img src="upload/docs/image/png/2014-04/t1.png" alt="T1"></a></li>
+		
+		
+		<li><a href="https://twitter.com/T2_RATP" target='_blank'><img src="upload/docs/image/png/2014-04/t2.png" alt="T2"></a></li>
+		
+		
+		<li><a href="https://twitter.com/T3a_RATP" target='_blank'><img src="upload/docs/image/png/2014-04/t3a.png" alt="T3a"></a></li>
+		
+		
+		<li><a href="https://twitter.com/T3b_RATP" target='_blank'><img src="upload/docs/image/png/2014-04/t3b.png" alt="T3b"></a></li>
+		
+		
+		<li><a href="https://twitter.com/T5_RATP" target='_blank'><img src="upload/docs/image/png/2014-04/t5.png" alt="T5"></a></li>
+		
+		
+		<li><a href="https://twitter.com/T6_RATP" target='_blank'><img src="upload/docs/image/png/2014-12/logo_t6_2014-12-16_09-54-43_889.png" alt=""></a></li>
+		
+		
+		<li><a href="https://twitter.com/T7_RATP" target='_blank'><img src="upload/docs/image/png/2014-04/t7.png" alt="T7"></a></li>
+		
+		
+		<li><a href="https://twitter.com/T8_RATP" target='_blank'><img src="upload/docs/image/png/2014-12/logo_t8_2014-12-16_09-55-14_730.png" alt=""></a></li>
+		
+		</ul></div>
+      
+  </div>
+  
+</li>
+
+</div>
+			
+
+
+
+
+
+
+
+
+<li class="footerCol">
+	<ul class="lastFooterCol">
+
+
+
+		<li><a href="http://scope.ratp.fr/" target='_blank' style="background:url('upload/docs/image/png/2014-02/footer-scope.png') no-repeat left;" onmouseover="this.style.background='url(upload/docs/image/png/2014-02/footer-scope-hover.png) no-repeat left';" onmouseout="this.style.background='url(upload/docs/image/png/2014-02/footer-scope.png) no-repeat left';"><div>RATP Scope</div></a></li>
+		
+
+		<li><a href="https://www.facebook.com/RATPofficiel" target='_blank' style="background:url('upload/docs/image/png/2014-02/footer-facebook.png') no-repeat left;" onmouseover="this.style.background='url(upload/docs/image/png/2014-02/footer-facebook-hover.png) no-repeat left';" onmouseout="this.style.background='url(upload/docs/image/png/2014-02/footer-facebook.png) no-repeat left';"><div>Le groupe RATP sur Facebook</div></a></li>
+		
+
+		<li><a href="http://www.youtube.com/ratp" target='_blank' style="background:url('upload/docs/image/png/2014-02/footer-youtube.png') no-repeat left;" onmouseover="this.style.background='url(upload/docs/image/png/2014-02/footer-youtube-hover.png) no-repeat left';" onmouseout="this.style.background='url(upload/docs/image/png/2014-02/footer-youtube.png) no-repeat left';"><div>Le groupe RATP sur Youtube</div></a></li>
+		
+
+		<li><a href="ratp/c_20629/applications-/-twitter/" target='_blank' style="background:url('upload/docs/image/png/2014-02/footer-mobile.png') no-repeat left;" onmouseover="this.style.background='url(upload/docs/image/png/2014-02/footer-mobile-hover.png) no-repeat left';" onmouseout="this.style.background='url(upload/docs/image/png/2014-02/footer-mobile.png) no-repeat left';"><div>Applis mobile RATP</div></a></li>
+		
+
+		<li><a href="http://www.linkedin.com/company/ratp" target='_blank' style="background:url('upload/docs/image/png/2014-07/footer_-_linkedin.png') no-repeat left;" onmouseover="this.style.background='url(upload/docs/image/png/2014-07/footer_-_linkedin_-_hover.png) no-repeat left';" onmouseout="this.style.background='url(upload/docs/image/png/2014-07/footer_-_linkedin.png) no-repeat left';"><div>Le groupe RATP sur LinkedIn</div></a></li>
+		
+
+		<li><a href="http://fr.viadeo.com/fr/company/ratp" target='_blank' style="background:url('upload/docs/image/png/2014-07/footer_-_viadeo.png') no-repeat left;" onmouseover="this.style.background='url(upload/docs/image/png/2014-07/footer_-_viadeo_-_hover.png) no-repeat left';" onmouseout="this.style.background='url(upload/docs/image/png/2014-07/footer_-_viadeo.png) no-repeat left';"><div>Le groupe RATP sur Viadeo</div></a></li>
+		
+	</ul>
+</li>
+		</ul>
+		<ul class="bottomLinks">
+			
+
+
+
+
+
+<li class="logoRatpFooter"><img src="plugins/RATPHomePlugin/images/footer-logo-ratp.png" alt="RATP"></li>
+<li class="copyright">© RATP - Tous droits réservés</li>
+
+	
+		<li><a href="ratp/r_29405/contacts/">Contacts</a></li>
+	
+
+	
+		<li><a href="ratp/r_23855/mentions-legales/">Mentions légales</a></li>
+	
+
+	
+		<li><a href="ratp/r_23856/nos-faq/">Nos FAQ</a></li>
+	
+
+	
+		<li><a href="ratp/r_23858/tous-les-sites/">Tous les sites</a></li>
+	
+
+	
+		<li><a href="ratp/r_30437/plan-du-site/">Plan du site</a></li>
+	
+
+		</ul>
+		
+	</div>
+</footer></div></div>
+</div>
+</div>
+  
+
+
+
+
+  
+  
+    
+    
+    
+
+
+      
+      	
+        
+      
+      
+      
+      
+      
+      
+    
+    
+
+  
+  
+
+
+  
+
+
+  </div>
+
+
+
+
+
+
+
+	   
+	   
+	      <div id="pubEncart1Src" class="pubEncartSrc" style="display:none;">
+	           <script type="text/javascript">
+sas_pageid='39495/(horaires_et_trafic/hp)'; // Page : RATP.fr/horaires_et_trafic/hp (PageID=268672)
+sas_formatid=5790;  // Format : Rectangle1 300x250
+sas_target='';   // Ciblage
+SmartAdServer(sas_pageid,sas_formatid,sas_target);
+</script>
+<noscript>
+<a href="http://www3.smartadserver.com/call/pubjumpi/39495/(horaires_et_trafic/hp)/5790/S/[timestamp]/?" target="_blank">
+<img src="http://www3.smartadserver.com/call/pubi/39495/(horaires_et_trafic/hp)/5790/S/[timestamp]/?" border="0" alt="" /></a>
+</noscript>
+	      </div>
+	      
+	   
+	
+	   
+	   
+	      <div id="pubPubliCommuniqueSrc" class="pubEncartSrc" style="display:none;">
+	           <script type="text/javascript">
+sas_pageid='39495/(horaires_et_trafic/hp)'; // Page : RATP.fr/horaires_et_trafic/hp (PageID=268672)
+sas_formatid=6966;  // Format : Bouton1 300x120
+sas_target='';   // Ciblage
+SmartAdServer(sas_pageid,sas_formatid,sas_target);
+</script>
+<noscript>
+<a href="http://www3.smartadserver.com/call/pubjumpi/39495/(horaires_et_trafic/hp)/6966/M/[timestamp]/?" target="_blank">
+<img src="http://www3.smartadserver.com/call/pubi/39495/(horaires_et_trafic/hp)/6966/M/[timestamp]/?" border="0" alt="" /></a>
+</noscript>
+	      </div>
+		        
+	   
+	
+	   
+	   
+	      <div id="pubEncart2Src" class="pubEncartSrc" style="display:none;">
+	           <script type="text/javascript">
+sas_pageid='39495/(horaires_et_trafic/hp)'; // Page : RATP.fr/horaires_et_trafic/hp (PageID=268672)
+sas_formatid=5791;  // Format : Rectangle2 300x250
+sas_target='';   // Ciblage
+SmartAdServer(sas_pageid,sas_formatid,sas_target);
+</script>
+<noscript>
+<a href="http://www3.smartadserver.com/call/pubjumpi/39495/(horaires_et_trafic/hp)/5791/S/[timestamp]/?" target="_blank">
+<img src="http://www3.smartadserver.com/call/pubi/39495/(horaires_et_trafic/hp)/5791/S/[timestamp]/?" border="0" alt="" /></a>
+</noscript>
+	      </div>
+	      
+	   
+	
+
+<!--## DEBUT TAG XITI ##-->
+<script type="text/javascript">
+
+if( (typeof(xtnv)=='undefined')  || (xtnv == null) || (xtnv == "")){ xtnv = "document"; }
+if( (typeof(xtsd)=='undefined')  || (xtsd == null) || (xtsd == "")){ xtsd = "http://logc5"; }
+if( (typeof(xtsite)=='undefined')  || (xtsite == null) || (xtsite == "")){ xtsite = "63370"; }
+if( (typeof(xtn2)=='undefined')  || (xtn2 == null) || (xtn2 == "")){ xtn2 = "23"; }
+if( (typeof(xtpage)=='undefined')  || (xtpage == null) || (xtpage == "")){ xtpage = "Accueil_Horaires"; }
+if( (typeof(xtdi)=='undefined')  || (xtdi == null) || (xtdi == "")){ xtdi = ""; }
+xtergo = "0";
+xt_multc = "&x1=FR";
+xt_an = "";
+xt_ac = "";
+xtcustom = {};
+  // Dont modify below 
+	if (window.xtparam != null) {
+		window.xtparam += xt_multc + "&ac=" + xt_ac + "&an=" + xt_an;
+	} else {
+		window.xtparam = xt_multc + "&ac=" + xt_ac + "&an=" + xt_an;
+	};
+</script>
+<script type="text/javascript" src="plugins/XitiPlugin/js/xtclicks.js"></script>
+<script type="text/javascript" src="plugins/XitiPlugin/js/xtcore.js"></script>
+<script type="text/javascript" src="plugins/XitiPlugin/js/xtjwrm.js"></script>
+<script type="text/javascript" src="plugins/XitiPlugin/js/xtytrm.js"></script>
+<noscript>
+	<img width="1" height="1"
+		src="http://logc5.xiti.com/hit.xiti?s=63370&s2=23&p=Accueil_Horaires&di=x&x1=FR&an=&ac=&stc={}">
+</noscript>
+<!--## FIN TAG XITI ##-->
+<script type="text/javascript" language="JavaScript">
+/* <![CDATA[ */
+  var t0 = new Date().getTime();
+/* ]]> */
+</script>
+
+  <script src="js/packedJs_-1011184800.js"  type="text/javascript" language="JavaScript"></script>
+  <script src="js/channel.js?nopack&amp;contextPath=" type="text/javascript" language="JavaScript"></script>
+  <script src="js/packedJs_-2104834200.js"  type="text/javascript" language="JavaScript"></script>
+<script type="text/javascript" language="JavaScript">
+/* <![CDATA[ */
+ var domLoadFunc = function() { 
+   var t1 = new Date().getTime(); 
+
+	     
+if(navigator.userAgent.indexOf("MSIE 8") == -1){
+  JCMS.plugin.HomeUtils.initLang($('titreLangues'), $('langues'), $('blocRight'), $$('.menuLang a').first());
+}
+
+	     
+JCMS.plugin.HomeUtils.initSearch($('recherche'), $$('.menuSearch a').first(), $('champ-texte'));
+
+	     
+        var conteneurMenuId = 'menu';
+    
+        //---------------- Niveau N2-N3 ---------------- \\
+        var lienANavSup_n2n3     = '#menu_secondaire > li > a';
+        var lienSpanNavSup_n2n3  = '#menu_secondaire > li > span';
+        var menuSub_n2n3         = 'ul.navN2Bottom';
+        
+        var menuSupPrefix_n2n3   = 'navN2-';
+        var menuSubPrefix_n2n3   = 'navN2Bottom-';
+    
+        JCMS.plugin.menuUtils.init(conteneurMenuId, lienANavSup_n2n3, lienSpanNavSup_n2n3, menuSub_n2n3, menuSupPrefix_n2n3, menuSubPrefix_n2n3);
+        
+        //---------------- Niveau N3-N4 ---------------- \\
+        var lienANavSup_n3n4     = 'ul.menu_tertiaire > li > a';
+        var lienSpanNavSup_n3n4  = 'ul.menu_tertiaire > li > span';
+        var menuSub_n3n4         = 'ul.navN3Bottom';
+        
+        var menuSupPrefix_n3n4   = 'navN3-';
+        var menuSubPrefix_n3n4   = 'navN3Bottom-';
+        
+        JCMS.plugin.menuUtils.init(conteneurMenuId, lienANavSup_n3n4, lienSpanNavSup_n3n4, menuSub_n3n4, menuSupPrefix_n3n4, menuSubPrefix_n3n4);
+    
+	     
+	if( navigator.userAgent == "Mozilla/5.0 (X11; U; Linux i686; fr; rv:1.8.1.20) Gecko/20081217 Firefox/2.0.0.20" ) {
+		JCMS.plugin.HomeUtils.initMenu($('.borneMenu'), $$('.borneMenu h2'), $$('.menuMobile a').first());
+	}
+	else {
+		JCMS.plugin.HomeUtils.initMenu($('menu'), $$('#menu h2'), $$('.menuMobile a').first());
+	}
+
+	     
+
+$('groupeTwitter').up('.footerCol').removeClassName('active');
+
+	     JCMS.plugin.pubUtils.initAddictpub('pubEncart1');
+	     JCMS.plugin.pubUtils.initAddictpub('pubPubliCommunique');
+	     JCMS.plugin.pubUtils.initAddictpub('pubEncart2');
+     Ajax.markStyleSheetsLoaded('css/packedCss_556464708.css', 'css/packedCss_-1156107245.css', 'css/packedCss_862376268.css');
+     Ajax.markJavaScriptsLoaded('js/jalios/languages/fr.js', 'js/lib/jsonrpc.js', 'js/lib/prototype.js', 'js/lib/cookies.js', 'js/lib/swfobject.js', 'js/lib/builder.js', 'js/lib/effects.js', 'js/lib/dragdrop.js', 'js/lib/controls.js', 'js/lib/slider.js', 'js/lib/livepipe.js', 'js/lib/window.js', 'js/lib/rsh.js', 'js/lib/jscal2/jscal2.js', 'js/lib/jscal2/lang/fr.js', 'js/lib/datejs/date-fr.js', 'js/jalios/util.js', 'js/channel.js?nopack&amp;contextPath=', 'js/tabpane.js', 'js/tree.js', 'js/treegroup.js', 'js/widget.js', 'js/treecat.js', 'js/custom.js', 'custom/js/standard.js', 'js/custom_fo.js', 'plugins/RATPHomePlugin/js/plugin.js', 'js/maratp-widget-bootstrap-production.js');  
+  var t2 = new Date().getTime();
+  JcmsLogger.info('JSPPage', 'OnLoad in '+(t2-t1)+' ms', ' All JS in '+(t2-t0)+' ms');
+  document.body.className = document.body.className + ' js-ready';
+  document.isAjaxRefresh = true;
+};
+
+  document.observe('dom:loaded', function(){ domLoadFunc.defer(); });
+/* ]]> */
+</script>
+
+</body>
+</html>
+
+ 
