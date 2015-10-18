@@ -59,23 +59,46 @@ describe("DataBuilder", function(){
     });
 
     describe("Database interaction", function(){
-        it("create temp database", function(done){
-
-            var rewire = require('rewire');
+        var spyCreate = sinon.spy();
+        var spyUse = sinon.spy();
+        var rewire = require('rewire');
+            var nanodb = {insert: function(doc, options, callback){
+                callback(null, 'fake body');
+            }};
+        beforeEach(function(){
             dataBuilder = rewire('../lib/DataBuilder.js');
-            nano = {db: {create: function(dbName, callback){
-                callback(null, 'fake message');
-            }}};
+            nano = {
+                db: {
+                    create: function(dbName, callback){
+                        callback(null, 'fake body');
+                    },
+                    use: function(){
+                        return nanodb;
+                    }
+                }
+            };
+
             dataBuilder.__set__('nano', nano);
+            dataBuilder.__set__('nanodb', nanodb);
+        });
+        it("create temp database and use it", function(done){
             log.info(process.env.NODE_ENV);
             dataBuilder._private.initDB(function(callback){
-                done();
                 log.info('callback:', callback);
-                expect(callback).to.equal('fake message');
+                //expect(callback).to.equal('fake message');
+                expect(callback).to.equal('fake body');
+                done();
             });
         });
 
-        it("create design documents");
+        it("create design documents", function(done){
+            dataBuilder._private.createDesignDocument(function(callback2){
+                //expect(spyUse.called).to.be.true;
+                expect(callback2).to.equal('fake body');
+                log.info('CALLBACK:', callback2);
+                done();
+            });
+        });
 
         it("save lines to database");
 
