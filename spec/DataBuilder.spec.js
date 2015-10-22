@@ -2,19 +2,21 @@ describe("DataBuilder", function(){
     var requestStub;
     var sinon = require('sinon');
     var chai = require('chai');
-    var chaiAsPromised = require('chai-as-promised');
-    //chai.use(chaiAsPromised);
     var request = require ('request');
     var fs = require('fs');
     var expect = chai.expect;
+    chai.should();
+    chai.use(require('chai-things'));
     var bunyan = require('bunyan');
     var log = bunyan.createLogger({name: 'mocha-test'});
     var dataBuilder;
     var nano;
+    var rewire = require('rewire');
     var DBUrl = process.env.DB_URL.slice(0);
+    var revertRequest;
 
     beforeEach(function(){
-        dataBuilder = require('../lib/DataBuilder');
+        dataBuilder = rewire('../lib/DataBuilder');
         requestStub = sinon.stub(request, 'get');
         requestStubPost = sinon.stub(request, 'post');
     });
@@ -24,14 +26,15 @@ describe("DataBuilder", function(){
         requestStubPost.restore();
     });
 
-    it("get bus lines from page", function(){
+    it("get bus lines from page", function(done){
         var fakeHTMLContent = fs.readFileSync('./spec/input/lines_input.html', 'utf-8');
         requestStub.yields(null, null, fakeHTMLContent);
-        dataBuilder.fetchLines().then(function(lines){
-            expect(lines).to.have.property('name','206');
-            expect(lines).to.have.property('id','B206');
-            expect(lines).to.have.property('name', '220');
-            expect(lines).to.have.property('name', 'Montbus');
+        log.info('request: ', request);
+        dataBuilder.fetchLines(function(err, lines){
+        done();
+            log.warn('MENDOZA!!!!', lines);
+            lines.should.include.something.that.deep.equals({id: 'B206', name:'206'});
+            lines.should.include.something.that.deep.equals({id: 'B220', name:'220'});
         });
     });
 
@@ -41,7 +44,7 @@ describe("DataBuilder", function(){
         var lines = sinon.spy();
         requestStubPost.onFirstCall().yields(null, null, fakeHTML206);
         requestStubPost.onSecondCall().yields(null, null, fakeHTML220);
-        dataBuilder.fetchStations([{id: 'B206', name: '206'}, {id: 'B220', name: '220'}], function(lines){
+        dataBuilder.fetchStations([{id: 'B206', name: '206'}, {id: 'B220', name: '220'}], function(err, lines){
 
             lines.forEach(function(line){
 
@@ -61,12 +64,12 @@ describe("DataBuilder", function(){
     describe("Database interaction", function(){
         var spyCreate = sinon.spy();
         var spyUse = sinon.spy();
-        var rewire = require('rewire');
+        //var rewire = require('rewire');
             var nanodb = {insert: function(doc, options, callback){
                 callback(null, 'fake body');
             }};
         beforeEach(function(){
-            dataBuilder = rewire('../lib/DataBuilder.js');
+            //dataBuilder = rewire('../lib/DataBuilder.js');
             nano = {
                 db: {
                     create: function(dbName, callback){
@@ -83,7 +86,7 @@ describe("DataBuilder", function(){
         });
         it("create temp database and use it", function(done){
             log.info(process.env.NODE_ENV);
-            dataBuilder._private.initDB(function(callback){
+            dataBuilder.initDB(function(err, callback){
                 log.info('callback:', callback);
                 //expect(callback).to.equal('fake message');
                 expect(callback).to.equal('fake body');
@@ -92,7 +95,7 @@ describe("DataBuilder", function(){
         });
 
         it("create design documents", function(done){
-            dataBuilder._private.createDesignDocument(function(callback2){
+            dataBuilder._private.createDesignDocument(function(err, callback2){
                 //expect(spyUse.called).to.be.true;
                 expect(callback2).to.equal('fake body');
                 log.info('CALLBACK:', callback2);
