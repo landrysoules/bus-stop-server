@@ -1,5 +1,4 @@
-[![Build Status](https://semaphoreci.com/api/v1/projects/eee79177-df18-4b64-9bc4-e1f1939ecbe0/548134/badge.svg)](https://semaphoreci.com/landry/bus-stop-server)
-
+[![Build Status](https://semaphoreci.com/api/v1/projects/eee79177-df18-4b64-9bc4-e1f1939ecbe0/548061/badge.svg)](https://semaphoreci.com/landry/bus-stop-server)
 # bus-stop-server
 Server side application for BusStop mobile app.
 
