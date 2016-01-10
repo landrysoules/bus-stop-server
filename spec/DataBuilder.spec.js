@@ -28,7 +28,7 @@ describe('DataBuilder', function() {
     requestStubPost.restore()
   });
 
-  describe.only('DB initialization', function() {
+  describe('DB initialization', function() {
     beforeEach(function() {
       nano = {
         db: {
@@ -169,19 +169,6 @@ describe('DataBuilder', function() {
       dataBuilder.__set__('self', dataBuilder);
     });
 
-    it('remove any previously created temp database')
-
-    it('create temp database', function(done) {
-      log.info(process.env.NODE_ENV);
-      sinon.mock()
-      dataBuilder.initDB(function(err, callback) {
-        log.info('callback:', callback);
-        //expect(callback).to.equal('fake message');
-        expect(callback).to.equal('fake body');
-        done();
-      });
-    });
-
     it('populate temp database')
 
     it('generate hashcode for a document')
@@ -200,7 +187,6 @@ describe('DataBuilder', function() {
       });
     });
 
-    it('remove temp database');
   });
 
   describe('Configuration', function() {
