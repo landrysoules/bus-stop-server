@@ -1,32 +1,90 @@
 describe('DataBuilder', function() {
-  var requestStub;
-  var sinon = require('sinon');
-  var chai = require('chai');
-  var request = require('request');
-  var fs = require('fs');
-  var expect = chai.expect;
-  chai.should();
-  chai.use(require('chai-things'));
-  var bunyan = require('bunyan');
+  var requestStub
+  var sinon = require('sinon')
+  var chai = require('chai')
+  var request = require('request')
+  var fs = require('fs')
+  var expect = chai.expect
+  chai.should()
+  chai.use(require('chai-things'))
+  var bunyan = require('bunyan')
   var log = bunyan.createLogger({
     name: 'mocha-test'
   });
-  var dataBuilder;
-  var nano;
-  var rewire = require('rewire');
-  var DBUrl = process.env.DB_URL.slice(0);
-  var revertRequest;
+  var rewire = require('rewire')
+  var dataBuilder = rewire('../lib/DataBuilder')
+  var nano
+  var DBUrl = process.env.DB_URL.slice(0)
+  var revertRequest
 
   beforeEach(function() {
-    dataBuilder = rewire('../lib/DataBuilder');
-    requestStub = sinon.stub(request, 'get');
-    requestStubPost = sinon.stub(request, 'post');
+    // dataBuilder = rewire('../lib/DataBuilder')
+    requestStub = sinon.stub(request, 'get')
+    requestStubPost = sinon.stub(request, 'post')
   });
 
   afterEach(function() {
-    requestStub.restore();
-    requestStubPost.restore();
+    requestStub.restore()
+    requestStubPost.restore()
   });
+
+  describe.only('DB initialization', function() {
+    beforeEach(function() {
+      nano = {
+        db: {
+          get: function(dbName, callback) {
+            if (dbName === 'existingDB') {
+              callback(null, 'ok')
+            } else {
+              callback('unknown database')
+            }
+          },
+          create: function(dbName, callback) {
+            callback(null, 'database created')
+          }
+        }
+      }
+    })
+
+    it('DB doesn\'t exist: create it', function(done) {
+
+      dataBuilder.__set__('nano', nano)
+      dataBuilder.__set__('DB', 'fakeDB')
+      var spyCreate = sinon.spy(nano.db, 'create')
+      var spyGet = sinon.spy(nano.db, 'get')
+      dataBuilder.initDB(function(err, callback) {
+        if (err) {
+          log.error(err)
+        } else {
+          if (callback) {
+            log.info(callback)
+          }
+        }
+        done()
+        expect(spyGet.called).to.be.true
+        expect(spyCreate.called).to.be.true
+      })
+
+    })
+    it('DB already exist: use it', function(done) {
+      dataBuilder.__set__('nano', nano)
+      dataBuilder.__set__('DB', 'existingDB')
+      var spyCreate = sinon.spy(nano.db, 'create')
+      var spyGet = sinon.spy(nano.db, 'get')
+      dataBuilder.initDB(function(err, callback) {
+        if (err) {
+          log.error(err);
+        } else {
+          if (callback) {
+            log.info(callback)
+          }
+        }
+        done()
+        expect(spyGet.called).to.be.true
+        expect(spyCreate.called).to.be.false
+      })
+    })
+  })
 
   it('get bus lines from page', function(done) {
     var fakeHTMLContent = fs.readFileSync('./spec/input/lines_input.html', 'utf-8');
@@ -75,45 +133,6 @@ describe('DataBuilder', function() {
 
   });
 
-  describe('DB initialization', function() {
-
-    it.only('DB doesn\'t exist: create it', function(done) {
-      var spy = sinon.spy()
-      var nano = {
-        db: {
-          get: function(dbName, callback) {
-            callback('unknown database')
-          },
-          create: function(dbName, callback) {
-            log.info('In create mock')
-            spy('create called')
-            callback(null, 'database created')
-          },
-          use: function(dbName, callback) {
-            callback('unknown database')
-          }
-        },
-        destroy: function(dbName, callback) {
-          callback(null, 'database destroyed')
-        }
-      }
-      dataBuilder.__set__('nano', nano)
-      dataBuilder.initDB(function(err, callback) {
-        if (err) {
-          log.error(err);
-        } else {
-          if (callback) {
-            log.info(callback)
-          }
-        }
-        done();
-        expect(spy.called).to.be.true
-
-      })
-
-    })
-    it("TMP DB doesn't exist: create it")
-  })
 
   describe('Database interaction', function() {
     var spyCreate = sinon.spy();
