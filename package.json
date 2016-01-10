@@ -4,6 +4,7 @@
   "description": "Server application for mobile app BusStop.",
   "main": "index.js",
   "scripts": {
+    "start": "node ./index.js",
     "test": "./node_modules/mocha/bin/mocha spec --reporter spec --require ./spec/helpers/chai.js"
   },
   "repository": {
@@ -19,6 +20,7 @@
   "devDependencies": {
     "chai": "^3.2.0",
     "chai-as-promised": "^5.1.0",
+    "chai-things": "^0.2.0",
     "fs": "0.0.2",
     "mocha": "^2.3.2",
     "rewire": "^2.3.4",
