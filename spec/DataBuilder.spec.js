@@ -14,7 +14,7 @@ describe('DataBuilder', function() {
   var rewire = require('rewire')
   var dataBuilder = rewire('../lib/DataBuilder')
   var nano
-  var DBUrl = process.env.DB_URL.slice(0)
+  var DBUrl = process.env.COUCH_URL.slice(0)
   var revertRequest
 
   beforeEach(function() {
@@ -30,6 +30,10 @@ describe('DataBuilder', function() {
 
   describe('DB initialization', function() {
     beforeEach(function() {
+      var spyDesign = sinon.spy()
+      dataBuilder.__set__('createDesignDocument', function(callback) {
+        callback(null)
+      })
       nano = {
         db: {
           get: function(dbName, callback) {
@@ -41,6 +45,9 @@ describe('DataBuilder', function() {
           },
           create: function(dbName, callback) {
             callback(null, 'database created')
+          },
+          use: function(dbName) {
+            return null
           }
         }
       }
@@ -178,25 +185,18 @@ describe('DataBuilder', function() {
     it('if hash temp eq regular, do nothing')
 
 
-    it('create design documents', function(done) {
-      dataBuilder._private.createDesignDocument(function(err, callback2) {
-        //expect(spyUse.called).to.be.true;
-        expect(callback2).to.equal('fake body');
-        log.info('CALLBACK:', callback2);
-        done();
-      });
-    });
+    it('create design documents')
 
   });
 
   describe('Configuration', function() {
 
     beforeEach(function() {
-      delete process.env.DB_URL;
+      delete process.env.COUCH_URL;
     });
 
     afterEach(function() {
-      process.env.DB_URL = DBUrl;
+      process.env.COUCH_URL = DBUrl;
     });
 
     it('throw error if a config variable is missing', function() {
