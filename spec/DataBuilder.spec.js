@@ -77,19 +77,27 @@ describe('DataBuilder', function() {
 
   describe('DB initialization', function() {
 
-    it.only('TMP DB already exists: remove it then create new', function(done) {
-      var getMock;
-      var nanoGetMock = sinon.mock(getMock, function(dbName, callback) {
-        callback(null, 'roger');
-      })
-      //FIXME: rewrite this part using stub/yields as in lines 53/54
+    it.only('DB doesn\'t exist: create it', function(done) {
+      var spy = sinon.spy()
       var nano = {
         db: {
-          get: function(dbName, callback){callback(null, 'roger')}
+          get: function(dbName, callback) {
+            callback('unknown database')
+          },
+          create: function(dbName, callback) {
+            log.info('In create mock')
+            spy('create called')
+            callback(null, 'database created')
+          },
+          use: function(dbName, callback) {
+            callback('unknown database')
+          }
+        },
+        destroy: function(dbName, callback) {
+          callback(null, 'database destroyed')
         }
-      };
-
-      dataBuilder.__set__('nano', nano);
+      }
+      dataBuilder.__set__('nano', nano)
       dataBuilder.initDB(function(err, callback) {
         if (err) {
           log.error(err);
@@ -99,6 +107,8 @@ describe('DataBuilder', function() {
           }
         }
         done();
+        expect(spy.called).to.be.true
+
       })
 
     })

@@ -1,4 +1,4 @@
-var dataBuilder = require('./DataBuilder');
+var dataBuilder = require('lib/DataBuilder');
 var bunyan = require('bunyan');
 var log = bunyan.createLogger({
   name: 'index'
