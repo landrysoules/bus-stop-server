@@ -99,7 +99,7 @@ describe('DataBuilder', function() {
     log.info('request: ', request);
     dataBuilder.fetchLines(function(err, lines) {
       done();
-      log.warn('MENDOZA!!!!', lines)
+      log.warn('LINES!!!!', lines)
       lines.should.include.something.that.deep.equals({
         id: 'B206',
         name: '206'
@@ -112,11 +112,11 @@ describe('DataBuilder', function() {
   });
 
   it('get stations for given lines', function(done) {
-    var fakeHTML206 = fs.readFileSync('./spec/input/stations_206.html', 'utf-8');
-    var fakeHTML220 = fs.readFileSync('./spec/input/stations_220.html', 'utf-8');
-    var lines = sinon.spy();
-    requestStubPost.onFirstCall().yields(null, null, fakeHTML206);
-    requestStubPost.onSecondCall().yields(null, null, fakeHTML220);
+    var fakeHTML206 = fs.readFileSync('./spec/input/stations_206.html', 'utf-8')
+    var fakeHTML220 = fs.readFileSync('./spec/input/stations_220.html', 'utf-8')
+    var lines = sinon.spy()
+    requestStubPost.onFirstCall().yields(null, null, fakeHTML206)
+    requestStubPost.onSecondCall().yields(null, null, fakeHTML220)
     dataBuilder.fetchStations([{
       id: 'B206',
       name: '206'
@@ -127,19 +127,44 @@ describe('DataBuilder', function() {
 
       lines.forEach(function(line) {
 
-        log.info('-------------- LINE +++++++++++++++++++++', line);
-      });
-      log.info(lines[0].stations[0]);
-      expect(lines.length).to.equals(2);
-      expect(lines[0].stations[0].id).to.equals('206_216_217');
-      expect(lines[0].stations[lines[0].stations.length - 1].id).to.equals('206_303_304');
-      expect(lines[1].stations[0].id).to.equals('220_44_64');
-      expect(lines[1].stations[lines[1].stations.length - 1].id).to.equals('220_16_91');
-      done();
-    });
+        log.info('-------------- LINE +++++++++++++++++++++', line)
+      })
+      log.info(lines[0].stations[0])
+      expect(lines.length).to.equals(2)
+      expect(lines[0].stations[0].id).to.equals('206_216_217')
+      expect(lines[0].stations[lines[0].stations.length - 1].id).to.equals('206_303_304')
+      expect(lines[1].stations[0].id).to.equals('220_44_64')
+      expect(lines[1].stations[lines[1].stations.length - 1].id).to.equals('220_16_91')
+      done()
+    })
 
-  });
+  })
 
+  describe('Process every line', function() {
+    it.skip('Line isn\'t present in database', function(done) {
+      var stub = sinon.stub(require('nano')('http://fake.db:5984'), 'request', function(callback) {
+        return ('err')
+      })
+
+      dataBuilder.compare({
+        line: {
+          name: '220',
+          stations: {
+            '220_43': 'Jean Kiffer'
+          }
+        }
+      }, function(err, body) {
+        if (err) {
+          log.error(err)
+        } else {
+          log.debug(body)
+        }
+      })
+      done()
+    })
+    it('Line is already present and hashcode is the same')
+    it('Line is already present and hashcode is different')
+  })
 
   describe('Database interaction', function() {
     var spyCreate = sinon.spy();
@@ -176,7 +201,6 @@ describe('DataBuilder', function() {
       dataBuilder.__set__('self', dataBuilder);
     });
 
-    it('populate temp database')
 
     it('generate hashcode for a document')
 

@@ -16,6 +16,20 @@ dataBuilder.initDB(function(err, success) {
             log.error('Error while fetching stations', err)
           } else {
             log.info('LINES:', lines)
+            var async = require('async')
+            var bulkDocs = []
+            async.eachSeries(lines, function(line, callback) {
+              dataBuilder.compare(line, bulkDocs, callback)
+            }, function(err) {
+              log.warn('BULK DOCS:', bulkDocs)
+              dataBuilder.save(bulkDocs, function(err, success) {
+                if (err) {
+                  log.error(err)
+                } else {
+                  log.info('SUCCESS !')
+                }
+              })
+            })
           }
         })
       }

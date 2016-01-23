@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./index.js",
+    "test-debug": "node-debug _mocha spec --reporter spec --require ./spec/helpers/chai.js",
     "test": "./node_modules/mocha/bin/mocha spec --reporter spec --require ./spec/helpers/chai.js"
   },
   "repository": {
@@ -32,6 +33,7 @@
     "cheerio": "^0.19.0",
     "lodash": "^3.10.1",
     "nano": "^6.1.5",
+    "object-hash": "^1.1.0",
     "q": "^1.4.1",
     "request": "^2.62.0",
     "request-debug": "^0.2.0"
