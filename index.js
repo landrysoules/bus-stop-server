@@ -19,19 +19,17 @@ dataBuilder.initDB(function(err, success) {
             var async = require('async')
             var bulkDocs = []
             async.eachSeries(lines, function(line, callback) {
-                dataBuilder.compare(line, bulkDocs, callback)
-              }, function(err) {
-                log.warn('BULK DOCS:', bulkDocs)
-                dataBuilder.save(bulkDocs, function(err,success){
-                  if(err){
-                    log.error(err)
-                  }else{
-                    log.info('SUCCESS !')
-                  }
-                })
+              dataBuilder.compare(line, bulkDocs, callback)
+            }, function(err) {
+              log.warn('BULK DOCS:', bulkDocs)
+              dataBuilder.save(bulkDocs, function(err, success) {
+                if (err) {
+                  log.error(err)
+                } else {
+                  log.info('SUCCESS !')
+                }
               })
-              // TODO: fetch every line, generate hash, check if present in database, if not, write record and its hashcode.
-              // If present, compare existing hash with new one, if different, update record
+            })
           }
         })
       }

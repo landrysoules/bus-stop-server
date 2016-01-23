@@ -29,3 +29,5 @@ node_modules
 
 tags
 .tags*
+
+.imdone

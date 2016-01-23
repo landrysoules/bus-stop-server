@@ -9,3 +9,16 @@ Server side application for BusStop mobile app.
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
+
+## Instructions
+
+To start the app:  
+COUCH_URL=<couch url> DB_NAME=<database name> NODE_ENV=test npm start|bunyan
+
+To run the tests:
+COUCH_URL=<couch url> DB_NAME=<database name> NODE_ENV=test npm test|bunyan
+
+COUCH_URL is expected to be in the form: http://username:userpassword@server:port  
+DB_NAME is self-explaining
+
+By piping to bunyan, you will obtain nice formatted logs.  

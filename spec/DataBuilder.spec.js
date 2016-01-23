@@ -140,8 +140,8 @@ describe('DataBuilder', function() {
 
   })
 
-  describe.only('Process every line', function() {
-    it('Line isn\'t present in database', function(done) {
+  describe('Process every line', function() {
+    it.skip('Line isn\'t present in database', function(done) {
       var stub = sinon.stub(require('nano')('http://fake.db:5984'), 'request', function(callback) {
         return ('err')
       })
