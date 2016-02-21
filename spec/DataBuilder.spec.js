@@ -1,5 +1,5 @@
 describe('DataBuilder', function() {
-  var requestStub
+  var requestStub, requestStubPost
   var sinon = require('sinon')
   var chai = require('chai')
   var request = require('request')
@@ -9,13 +9,13 @@ describe('DataBuilder', function() {
   chai.use(require('chai-things'))
   var bunyan = require('bunyan')
   var log = bunyan.createLogger({
-    name: 'mocha-test'
+    name: 'mocha-test',
+    src: true,
+    level: process.env.LOG_LEVEL
   });
   var rewire = require('rewire')
   var dataBuilder = rewire('../lib/DataBuilder')
-  var nano
-  var DBUrl = process.env.COUCH_URL.slice(0)
-  var revertRequest
+
 
   beforeEach(function() {
     // dataBuilder = rewire('../lib/DataBuilder')
@@ -29,68 +29,7 @@ describe('DataBuilder', function() {
   });
 
   describe('DB initialization', function() {
-    beforeEach(function() {
-      var spyDesign = sinon.spy()
-      dataBuilder.__set__('createDesignDocument', function(callback) {
-        callback(null)
-      })
-      nano = {
-        db: {
-          get: function(dbName, callback) {
-            if (dbName === 'existingDB') {
-              callback(null, 'ok')
-            } else {
-              callback('unknown database')
-            }
-          },
-          create: function(dbName, callback) {
-            callback(null, 'database created')
-          },
-          use: function(dbName) {
-            return null
-          }
-        }
-      }
-    })
 
-    it('DB doesn\'t exist: create it', function(done) {
-
-      dataBuilder.__set__('nano', nano)
-      dataBuilder.__set__('DB', 'fakeDB')
-      var spyCreate = sinon.spy(nano.db, 'create')
-      var spyGet = sinon.spy(nano.db, 'get')
-      dataBuilder.initDB(function(err, callback) {
-        if (err) {
-          log.error(err)
-        } else {
-          if (callback) {
-            log.info(callback)
-          }
-        }
-        done()
-        expect(spyGet.called).to.be.true
-        expect(spyCreate.called).to.be.true
-      })
-
-    })
-    it('DB already exist: use it', function(done) {
-      dataBuilder.__set__('nano', nano)
-      dataBuilder.__set__('DB', 'existingDB')
-      var spyCreate = sinon.spy(nano.db, 'create')
-      var spyGet = sinon.spy(nano.db, 'get')
-      dataBuilder.initDB(function(err, callback) {
-        if (err) {
-          log.error(err);
-        } else {
-          if (callback) {
-            log.info(callback)
-          }
-        }
-        done()
-        expect(spyGet.called).to.be.true
-        expect(spyCreate.called).to.be.false
-      })
-    })
   })
 
   it('get bus lines from page', function(done) {
@@ -101,11 +40,11 @@ describe('DataBuilder', function() {
       done();
       log.warn('LINES!!!!', lines)
       lines.should.include.something.that.deep.equals({
-        id: 'B206',
+        _id: 'B206',
         name: '206'
       });
       lines.should.include.something.that.deep.equals({
-        id: 'B220',
+        _id: 'B220',
         name: '220'
       });
     });
@@ -166,71 +105,13 @@ describe('DataBuilder', function() {
     it('Line is already present and hashcode is different')
   })
 
-  describe('Database interaction', function() {
-    var spyCreate = sinon.spy();
-    var spyUse = sinon.spy();
-    //var rewire = require('rewire');
-    var nanodb = {
-      insert: function(doc, options, callback) {
-        callback(null, 'fake body');
-      }
-    };
-    beforeEach(function() {
-      //dataBuilder = rewire('../lib/DataBuilder.js');
-      nanoMock = {
-        db: {
-          create: function(dbName, callback) {
-            callback(null, 'fake body');
-          },
-          use: function() {
-            return nanodb;
-          },
-          destroy: function(dbName, callback) {
-            callback(null, 'destroy called')
-          },
-          get: function(dbName, callback) {
-            callback(null, 'fake db exists')
-          }
-        }
-      };
-
-      // nano = sinon.mock(nanoMock);
-
-      dataBuilder.__set__('nano', nano);
-      dataBuilder.__set__('nanodb', nanodb);
-      dataBuilder.__set__('self', dataBuilder);
-    });
-
+  describe('Document comparison', function() {
 
     it('generate hashcode for a document')
 
     it('if hash temp different from hash regular, replace regular document')
 
     it('if hash temp eq regular, do nothing')
+  })
 
-
-    it('create design documents')
-
-  });
-
-  describe('Configuration', function() {
-
-    beforeEach(function() {
-      delete process.env.COUCH_URL;
-    });
-
-    afterEach(function() {
-      process.env.COUCH_URL = DBUrl;
-    });
-
-    it('throw error if a config variable is missing', function() {
-      expect(function() {
-        dataBuilder._private.checkConfig();
-      }).to.throw(Error);
-    });
-  });
-
-  //it("keep running if a line is in error", function(){
-  //fail('Not implemented yet.');
-  //});
-});
+})
