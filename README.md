@@ -13,11 +13,11 @@ This app is in charge of collecting data and update lines and stations database.
 
 ## Instructions
 
-To start the app:  
-COUCH_URL=<couch url> DB_NAME=<database name> NODE_ENV=test npm start|bunyan
+To test the app:  
+LOG_LEVEL=<log level> DB_URL=mongodb://<DB url> npm test|bunyan
 
-To run the tests:  
 
+To run the app:  
 LOG_LEVEL=<log level> DB_URL=mongodb://<DB url> npm start|bunyan
 
 DB_URL is expected to be in the form: mongodb://host:port/database_name  
