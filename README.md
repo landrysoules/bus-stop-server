@@ -16,10 +16,11 @@ This app is in charge of collecting data and update lines and stations database.
 To start the app:  
 COUCH_URL=<couch url> DB_NAME=<database name> NODE_ENV=test npm start|bunyan
 
-To run the tests:
-COUCH_URL=<couch url> DB_NAME=<database name> NODE_ENV=test npm test|bunyan
+To run the tests:  
 
-COUCH_URL is expected to be in the form: http://username:userpassword@server:port  
-DB_NAME is self-explaining
+LOG_LEVEL=<log level> DB_URL=mongodb://<DB url> npm start|bunyan
+
+DB_URL is expected to be in the form: mongodb://host:port/database_name  
+LOG_LEVEL is one of trace, debug, info, warn, error, fatal
 
 By piping to bunyan, you will obtain nice formatted logs.  
